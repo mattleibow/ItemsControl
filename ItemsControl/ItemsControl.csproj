@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <RootNamespace>Xamarin.Forms.Extended</RootNamespace>
+    <AssemblyName>Xamarin.Forms.Extended.ItemsControl</AssemblyName>
+    <TargetFramework>netstandard1.0</TargetFramework>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\$(AssemblyName).xml</DocumentationFile>
+    <Version>1.0.0-preview</Version>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Copyright>Copyright © Matthew Leibowitz</Copyright>
+    <PackageId>Xamarin.Forms.Extended.ItemsControl</PackageId>
+    <PackageProjectUrl>https://github.com/mattleibow/ItemsControl</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/mattleibow/ItemsControl/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryUrl>https://github.com/mattleibow/ItemsControl</RepositoryUrl>
+    <Description>A Xamarin.Forms control that can be used to present a small collection of items without the need for a list view.</Description>
+    <PackageTags>Xamarin.Forms,ItemsControl,collection,Xamarin,Windows,UWP,Android,iOS</PackageTags>
+    <Authors>Matthew Leibowitz</Authors>
+    <Company>Matthew Leibowitz</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="2.4.0.280" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:extended="clr-namespace:Xamarin.Forms.Extended;assembly=Xamarin.Forms.Extended.ItemsControl"
+             xmlns:local="clr-namespace:ItemsControlApp"
+             x:Class="ItemsControlApp.GridPage"
+             BindingContext="{StaticResource ViewModel}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:GridViewModel x:Key="ViewModel" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Padding="12">
+
+        <Label Text="Controls:" />
+
+        <StackLayout Padding="12">
+            <Button Text="Add Item" Command="{Binding AddItemCommand}" />
+        </StackLayout>
+
+        <Label Text="Items:" />
+
+        <ScrollView Orientation="Both">
+            <extended:ItemsControl ItemsSource="{Binding Items}" Padding="12">
+                <extended:ItemsControl.ItemsPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </extended:ItemsControl.ItemsPanel>
+                <extended:ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button Text="{Binding Name}" Grid.Row="{Binding Y}" Grid.Column="{Binding X}"
+                                CommandParameter="{Binding}" Command="{Binding RemoveItemCommand, Source={StaticResource ViewModel}}" />
+                    </DataTemplate>
+                </extended:ItemsControl.ItemTemplate>
+            </extended:ItemsControl>
+        </ScrollView>
+
+    </StackLayout>
+
+</ContentPage>

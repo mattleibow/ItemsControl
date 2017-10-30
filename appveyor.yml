@@ -1,0 +1,15 @@
+version: '{build}'
+image: Visual Studio 2017
+configuration: Release
+
+before_build:
+  - nuget restore
+build:
+  verbosity: minimal
+  project: ItemsControl.sln
+
+nuget:
+  disable_publish_on_pr: true
+artifacts:
+- path: ItemsControl\bin\$(CONFIGURATION)\
+- path: ItemsControl\bin\$(CONFIGURATION)\*.nupkg
